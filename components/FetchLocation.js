@@ -4,12 +4,12 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 const FetchLocation = (props) => {
   return (
     <View >
-     <TouchableOpacity
+     {/* <TouchableOpacity
           style={styles.locationButton}
           onPress={() => props.getLocation() }
           underlayColor='#fff'>
           <Text style={styles.getLocationText}> Get Location</Text>
- </TouchableOpacity>
+    </TouchableOpacity> */}
     </View>
   );
 }
