@@ -7,26 +7,32 @@ export default function App() {
 
   const [meal, setMeal] = useState("Bologna")
   const [face, setFace] = useState(false)
+  const [location, setLocation] = useState({})
+  
 
   const changeDinner = () => {
     return meal === "Bologna" ? setMeal("Ass Booty") : setMeal("Bologna")
   }
 
   const changeFace = () => {
-    console.log(face)
     return setFace(!face)
   }
 
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
+      setLocation({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      })
     }, err => console.log(err)); 
   }
 
   return (
     <View style={styles.container}>
-      <Header meal={meal} changeDinner={changeDinner} changeFace={changeFace} face={face} />
-      <FetchLocation getLocation={getLocation}/>
+      <Header meal={meal} changeDinner={changeDinner} changeFace={changeFace} face={face}/>
+      <FetchLocation getLocation={getLocation} location={location}/>
     </View>
   );
 }
