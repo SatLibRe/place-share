@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header meal={meal} changeDinner={changeDinner} changeFace={changeFace} face={face}/>
+      {/* <Header meal={meal} changeDinner={changeDinner} changeFace={changeFace} face={face}/> */}
       <FetchLocation getLocation={getLocation} location={location}/>
     </View>
   );
@@ -40,8 +40,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   }
+
 });
